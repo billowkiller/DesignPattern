@@ -10,17 +10,19 @@ CFLAGS=-g \
   -W \
   -Wall \
   -fPIC
-CPPFLAGS=-D_GNU_SOURCE \
-  -D__STDC_LIMIT_MACROS \
-  -DVERSION=\"1.9.8.7\"
+
+TARGET=strategy abstract_facotry
 
 .PHONY:all
-all: strategy
+all: $(TARGET)
 	@echo "make all done"
 
 .PHONY:clean
 clean:
-	rm -rf strategy
+	rm -f $(TARGET)
 
 strategy: strategy.cc
 	$(CC) strategy.cc -o strategy
+
+abstract_facotry: abstract_facotry.cc
+	$(CC) abstract_facotry.cc -o abstract_facotry 
